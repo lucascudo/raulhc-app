@@ -13,15 +13,15 @@ angular.module('starter.controllers', [
     };
     
     $scope.datepickerObject = {
-      titleLabel: 'Selecione uma data',  //Optional
-      todayLabel: 'Hoje',  //Optional
-      closeLabel: 'Fechar',  //Optional
-      setLabel: 'Aplicar',  //Optional
-      inputDate: new Date(),    //Optional
-      weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],   //Optional
+      titleLabel: 'Selecione uma data',
+      todayLabel: 'Hoje',
+      closeLabel: 'Fechar',
+      setLabel: 'Aplicar',
+      inputDate: new Date(),
+      weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
       monthList: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      from: new Date(),   //Optional
-      callback: function (date) {    //Mandatory
+      from: new Date(),
+      callback: function (date) {
         if (typeof date !== "undefined") {
             loadAgenda(date);
         }
