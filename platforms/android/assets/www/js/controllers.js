@@ -7,9 +7,13 @@ angular.module('starter.controllers', [
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
         RaulFactory.getAgenda({ "date": date }, function (agenda) {
-            $scope.agenda = agenda.eventos;
+            $scope.agenda = agenda.eventos.reverse();
             $ionicLoading.hide();
         });
+    };
+    
+    $scope.goOutside = function (url) {
+        window.open(url, '_blank');
     };
     
     $scope.datepickerObject = {
