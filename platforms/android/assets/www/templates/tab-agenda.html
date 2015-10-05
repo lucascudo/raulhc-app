@@ -1,20 +1,23 @@
-<ion-view view-title="Agenda">
+<ion-view view-title="RaulHC">
   <ion-content class="padding">
+    <ionic-datepicker input-obj="datepickerObject">
+        <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd-MM-yyyy' }}</button>
+    </ionic-datepicker>
     <div class="list card" ng-repeat="event in agenda">
         <div class="item item-divider">
-            <a href="{{ event.page }}">{{ event.title }}</a>
+            <a href="{{ event.page }}" target="_blank">{{ event.title }}</a>
         </div>
         <div class="item item-body">
             <div>
                 Responsável: {{ event.responsavel }}
-                <br>Tipo: {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
-                <br>Vagas: {{ event.vagas }}
-                <br>Entrada: {{ event.entrada }}
-                <br>Custo: {{ event.custo }}
-                <br>Local: {{ event.local }}
-                <br>Endereço: {{ event.endereco }}
-                <br>Inicio:  {{ event.dataIni }} {{ event.horaIni }}
-                <br>Fim:  {{ event.dataFim }} {{ event.horaFim }}
+                <br/>Tipo: {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
+                <br/>Vagas: {{ event.vagas }}
+                <br/>Entrada: {{ event.entrada }}
+                <br/>Custo: {{ event.custo }}
+                <br/>Local: {{ event.local }}
+                <br/>Endereço: {{ event.endereco }}
+                <br/>Inicio:  {{ event.dataIni }} {{ event.horaIni }}
+                <br/>Fim:  {{ event.dataFim }} {{ event.horaFim }}
             </div>
         </div>
     </div>
