@@ -7,16 +7,14 @@ angular.module('starter.services', [ 'ngResource' ])
             url: baseUrl + "Agenda/JSON",
 			method: "GET",
             headers: {
-                "Content-Type": "application/json",
-                //"charset": "UTF-8"
+                "Content-Type": "application/json; charset=UTF-8"
             }
 		},
         getTemGente: {
             url: baseUrl + "tem-gente?type=json",
 			method: "GET",
             headers: {
-                "Content-Type": "application/json",
-                //"charset": "UTF-8"
+                "Content-Type": "application/json; charset=UTF-8"
             }
 		}
 	});
