@@ -1,5 +1,8 @@
 <ion-view view-title="RaulHC">
   <ion-content class="padding">
+    <ionic-datepicker input-obj="datepickerObject">
+        <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd-MM-yyyy' }}</button>
+    </ionic-datepicker>
     <div class="list card" ng-repeat="event in agenda">
         <div class="item item-divider">
             <a href="{{ event.page }}" target="_blank">{{ event.title }}</a>
