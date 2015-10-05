@@ -1,17 +1,17 @@
-#Agenda de Eventos do Raul Hacker Club
+*Agenda de Eventos do Raul Hacker Club*
 --------------------------------------------
 
 Somos um grupo de pessoas interessadas em usar, remixar e compartilhar tecnologia, aprendizado, diversão e cultura de forma colaborativa e indiscriminada.
 Temos como prioridade estratégica a manutenção de um hackerspace em Salvador/BA para concretizar essas aspirações.
 
 
-##Baixe este app na Play Store
+**Baixe este app na Play Store**
 -----------------------
 
 https://play.google.com/store/apps/details?id=cc.raulhc
 
 
-##Especificações
+**Especificações**
 -----------------------
 
 Esse app foi feito utilizando Ionic Framework. Nosso objetivo é divulgar o Raul Hacker Club.
