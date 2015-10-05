@@ -1,4 +1,4 @@
-*Agenda de Eventos do Raul Hacker Club*
+*Aplicativo Mobile do Raul Hacker Club*
 --------------------------------------------
 
 Somos um grupo de pessoas interessadas em usar, remixar e compartilhar tecnologia, aprendizado, diversão e cultura de forma colaborativa e indiscriminada.
