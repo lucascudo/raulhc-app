@@ -1,0 +1,6 @@
+<ion-view view-title="Tem Gente?">
+  <ion-content class="padding">
+    <div ng-if="!temGente.numPess">A sede está vazia. :-( </div>
+    <div ng-if="temGente.numPess">Tem {{ temGente.numPess }} na sede. Fecharemos em: {{ temGente.fechaEm }}. </div>
+  </ion-content>
+</ion-view>
