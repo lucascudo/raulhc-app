@@ -5,6 +5,12 @@ Somos um grupo de pessoas interessadas em usar, remixar e compartilhar tecnologi
 Temos como prioridade estratégica a manutenção de um hackerspace em Salvador/BA para concretizar essas aspirações.
 
 
+##Baixe este app na Play Store
+-----------------------
+
+https://play.google.com/store/apps/details?id=cc.raulhc
+
+
 ##Especificações
 -----------------------
 
