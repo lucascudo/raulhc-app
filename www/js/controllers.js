@@ -24,7 +24,6 @@ angular.module('starter.controllers', [
       setLabel: 'Aplicar',
       weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
       monthList: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      from: new Date(),
       callback: function (date) {
         if (typeof date !== "undefined") {
             loadAgenda(date);
