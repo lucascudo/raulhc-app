@@ -16,15 +16,15 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
-  <feature name="InAppBrowser" />
+  <feature name="InAppBrowser"/>
   <feature name="InAppBrowser">
-    <param name="ios-package" value="CDVInAppBrowser" />
+    <param name="ios-package" value="CDVInAppBrowser"/>
   </feature>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
   <feature name="InAppBrowser">
-      <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
   </feature>
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
