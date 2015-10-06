@@ -1,6 +1,6 @@
 angular.module('starter.services', [ 'ngResource' ])
 
-.factory('RaulFactory', function($resource) {
+.factory('RaulFactory', function ($resource) {
     var baseUrl = "http://raulhc.cc/";
     return $resource("RaulHC WebService", {}, {
         getAgenda: {
