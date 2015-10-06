@@ -10,6 +10,10 @@ angular.module('starter.controllers', [
         RaulFactory.getAgenda({ "date": date }, function (agenda) {
             $scope.agenda = agenda.eventos.reverse();
             $ionicLoading.hide();
+        }, function (error) {
+            console.log(error);
+            delete $scope.agenda;
+            $ionicLoading.hide();
         });
     };
     
@@ -38,6 +42,10 @@ angular.module('starter.controllers', [
     $ionicLoading.show({ template: 'loading' });
     RaulFactory.getTemGente({}, function (temGente) {
         $scope.temGente = temGente;
+        $ionicLoading.hide();
+    }, function (error) {
+        console.log(error);
+        delete $scope.temGente;
         $ionicLoading.hide();
     });
     */
