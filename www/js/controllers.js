@@ -4,6 +4,7 @@ angular.module('starter.controllers', [
 ])
 .controller('AgendaCtrl', function($ionicLoading, $scope, RaulFactory) {
     var loadAgenda = function (date) {
+        $scope.datepickerObject.inputDate = date;
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
         RaulFactory.getAgenda({ "date": date }, function (agenda) {
@@ -21,7 +22,6 @@ angular.module('starter.controllers', [
       todayLabel: 'Hoje',
       closeLabel: 'Fechar',
       setLabel: 'Aplicar',
-      inputDate: new Date(),
       weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
       monthList: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
       from: new Date(),
