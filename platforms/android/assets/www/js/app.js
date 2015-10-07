@@ -8,11 +8,10 @@
 angular.module('starter', [
   'ionic',
   'starter.controllers',
-  'starter.services',
-  'starter.filters'
+  'starter.services'
 ])
 
-.run(function ($ionicPlatform) {
+.run(function ($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -26,6 +25,10 @@ angular.module('starter', [
       StatusBar.styleLightContent();
     }
   });
+    
+  $rootScope.goOutside = function (url) {
+      window.open(url, '_blank');
+  };
 })
 
 .config(function ($stateProvider, $urlRouterProvider) {
@@ -51,6 +54,16 @@ angular.module('starter', [
       'tab-agenda': {
         templateUrl: 'templates/tab-agenda.html',
         controller: 'AgendaCtrl'
+      }
+    }
+  })
+  
+  .state('tab.doar', {
+    url: '/doar',
+    views: {
+      'tab-doar': {
+        templateUrl: 'templates/tab-doar.html',
+        controller: 'DoarCtrl'
       }
     }
   })

@@ -5,7 +5,14 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
         $scope.datepickerObject.inputDate = date;
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
-        RaulFactory.getAgenda({ "date": date }, function (agenda) {
+        RaulFactory.ws.getAgenda({ "date": date }, function (agenda) {
+            var needle = "Doc.Sede#ComoChegar";
+            for (var i = 0; i < agenda.eventos.length; ++i) {
+                if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
+                    agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace(needle, "");
+                    agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
+                }
+            }
             $scope.agenda = agenda.eventos.reverse();
             $ionicLoading.hide();
         }, function (error) {
@@ -13,10 +20,6 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
             delete $scope.agenda;
             $ionicLoading.hide();
         });
-    };
-    
-    $scope.goOutside = function (url) {
-        window.open(url, '_blank');
     };
     
     $scope.datepickerObject = {
@@ -36,10 +39,18 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     loadAgenda(new Date());
 })
 
+.controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
+    $ionicLoading.show({ template: 'loading' });
+    RaulFactory.getHelpAppeal(function (phrase) {
+        $scope.helpAppeal = phrase;
+        $ionicLoading.hide();
+    });
+})
+
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     /*
     $ionicLoading.show({ template: 'loading' });
-    RaulFactory.getTemGente({}, function (temGente) {
+    RaulFactory.ws.getTemGente({}, function (temGente) {
         $scope.temGente = temGente;
         $ionicLoading.hide();
     }, function (error) {
