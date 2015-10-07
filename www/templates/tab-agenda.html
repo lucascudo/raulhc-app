@@ -21,7 +21,9 @@
                 <br />
                 <b>Local:</b> {{ event.local }}
                 <br />
-                <b>Endereço:</b> <font ng-bind-html="event.endereco | checkRaulAddress"></font>
+                <b>Endereço:</b>
+                    <font ng-if="!event.enderecoUrl"> {{ event.endereco }} </font>
+                    <a href="#" ng-if="event.enderecoUrl" ng-click="goOutside(event.enderecoUrl)"> {{ event.endereco }} </a>
                 <br />
                 <b>Inicio:</b> {{ event.dataIni | date:'dd-MM-yyyy' }} {{ event.horaIni }}
                 <br />

@@ -6,6 +6,13 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
         RaulFactory.getAgenda({ "date": date }, function (agenda) {
+            var needle = "Doc.Sede#ComoChegar";
+            for (var i = 0; i < agenda.eventos.length; ++i) {
+                if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
+                    agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace(needle, "");
+                    agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
+                }
+            }
             $scope.agenda = agenda.eventos.reverse();
             $ionicLoading.hide();
         }, function (error) {

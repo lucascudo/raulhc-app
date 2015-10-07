@@ -1,13 +1,16 @@
-angular.module('starter.controllers', [
-    'ionic-datepicker',
-    'starter.services'
-])
-.controller('AgendaCtrl', function($ionicLoading, $scope, RaulFactory) {
+angular.module('starter.controllers', [ 'ionic-datepicker' ])
+
+.controller('AgendaCtrl', function ($ionicLoading, $scope, RaulFactory) {
     var loadAgenda = function (date) {
+        $scope.datepickerObject.inputDate = date;
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
         RaulFactory.getAgenda({ "date": date }, function (agenda) {
             $scope.agenda = agenda.eventos.reverse();
+            $ionicLoading.hide();
+        }, function (error) {
+            console.log(error);
+            delete $scope.agenda;
             $ionicLoading.hide();
         });
     };
@@ -21,10 +24,8 @@ angular.module('starter.controllers', [
       todayLabel: 'Hoje',
       closeLabel: 'Fechar',
       setLabel: 'Aplicar',
-      inputDate: new Date(),
       weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
       monthList: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      from: new Date(),
       callback: function (date) {
         if (typeof date !== "undefined") {
             loadAgenda(date);
@@ -34,11 +35,16 @@ angular.module('starter.controllers', [
     
     loadAgenda(new Date());
 })
-.controller('TemGenteCtrl', function($ionicLoading, $scope, RaulFactory) {
+
+.controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     /*
     $ionicLoading.show({ template: 'loading' });
     RaulFactory.getTemGente({}, function (temGente) {
         $scope.temGente = temGente;
+        $ionicLoading.hide();
+    }, function (error) {
+        console.log(error);
+        delete $scope.temGente;
         $ionicLoading.hide();
     });
     */

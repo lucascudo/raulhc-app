@@ -1,4 +1,4 @@
-<ion-view view-title="RaulHC">
+<ion-view view-title="Agenda">
   <ion-content class="padding">
     <ionic-datepicker input-obj="datepickerObject">
         <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd-MM-yyyy' }}</button>
@@ -8,17 +8,25 @@
             <a href="#" ng-click="goOutside(event.page)">{{ event.title }}</a>
         </div>
         <div class="item item-body">
-            <div>
-                Responsável: {{ event.responsavel }}
-                <br/>Tipo: {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
-                <br/>Vagas: {{ event.vagas }}
-                <br/>Entrada: {{ event.entrada }}
-                <br/>Custo: {{ event.custo }}
-                <br/>Local: {{ event.local }}
-                <br/>Endereço: {{ event.endereco }}
-                <br/>Inicio:  {{ event.dataIni }} {{ event.horaIni }}
-                <br/>Fim:  {{ event.dataFim }} {{ event.horaFim }}
-            </div>
+            <p class="no-margin">
+                <b>Responsável:</b> {{ event.responsavel }}
+                <br />
+                <b>Tipo:</b> {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
+                <br />
+                <b>Vagas:</b> {{ event.vagas }}
+                <br />
+                <b>Entrada:</b> {{ event.entrada }}
+                <br />
+                <b>Custo:</b> {{ event.custo }}
+                <br />
+                <b>Local:</b> {{ event.local }}
+                <br />
+                <b>Endereço:</b> <font ng-bind-html="event.endereco | checkRaulAddress"></font>
+                <br />
+                <b>Inicio:</b> {{ event.dataIni | date:'dd-MM-yyyy' }} {{ event.horaIni }}
+                <br />
+                <b>Fim:</b> {{ event.dataFim | date:'dd-MM-yyyy' }} {{ event.horaFim }}
+            </p>
         </div>
     </div>
   </ion-content>

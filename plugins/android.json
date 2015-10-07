@@ -30,14 +30,16 @@
                         }
                     ]
                 }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": []
+                }
             }
         }
     },
     "installed_plugins": {
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "cc.raulhc"
-        },
-        "cordova-plugin-console": {
             "PACKAGE_NAME": "cc.raulhc"
         },
         "cordova-plugin-device": {
