@@ -5,20 +5,28 @@
     </ionic-datepicker>
     <div class="list card" ng-repeat="event in agenda">
         <div class="item item-divider">
-            <b><a href="#" ng-click="goOutside(event.page)">{{ event.title }}</a></b>
+            <a href="#" ng-click="goOutside(event.page)">{{ event.title }}</a>
         </div>
         <div class="item item-body">
-            <div>
+            <p class="no-margin">
                 <b>Responsável:</b> {{ event.responsavel }}
-                <br/><b>Tipo:</b> {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
-                <br/><b>Vagas:</b> {{ event.vagas }}
-                <br/><b>Entrada:</b> {{ event.entrada }}
-                <br/><b>Custo:</b> {{ event.custo }}
-                <br/><b>Local:</b> {{ event.local }}
-                <br/><b>Endereço:</b> {{ event.endereco }}
-                <br/><b>Inicio:</b> {{ event.dataIni | date:'dd-MM-yyyy' }} {{ event.horaIni }}
-                <br/><b>Fim:</b> {{ event.dataFim | date:'dd-MM-yyyy' }} {{ event.horaFim }}
-            </div>
+                <br />
+                <b>Tipo:</b> {{ event.tipoDeAtividade }} {{ event.tipoDeReuniao }}
+                <br />
+                <b>Vagas:</b> {{ event.vagas }}
+                <br />
+                <b>Entrada:</b> {{ event.entrada }}
+                <br />
+                <b>Custo:</b> {{ event.custo }}
+                <br />
+                <b>Local:</b> {{ event.local }}
+                <br />
+                <b>Endereço:</b> <font ng-bind-html="event.endereco | checkRaulAddress"></font>
+                <br />
+                <b>Inicio:</b> {{ event.dataIni | date:'dd-MM-yyyy' }} {{ event.horaIni }}
+                <br />
+                <b>Fim:</b> {{ event.dataFim | date:'dd-MM-yyyy' }} {{ event.horaFim }}
+            </p>
         </div>
     </div>
   </ion-content>

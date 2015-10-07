@@ -1,7 +1,5 @@
-angular.module('starter.controllers', [
-    'ionic-datepicker',
-    'starter.services'
-])
+angular.module('starter.controllers', [ 'ionic-datepicker' ])
+
 .controller('AgendaCtrl', function ($ionicLoading, $scope, RaulFactory) {
     var loadAgenda = function (date) {
         $scope.datepickerObject.inputDate = date;
@@ -37,6 +35,7 @@ angular.module('starter.controllers', [
     
     loadAgenda(new Date());
 })
+
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     /*
     $ionicLoading.show({ template: 'loading' });
