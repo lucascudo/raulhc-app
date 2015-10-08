@@ -3,8 +3,8 @@
     <ionic-datepicker input-obj="datepickerObject">
         <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd-MM-yyyy' }}</button>
     </ionic-datepicker>
-    <p ng-if="error"> {{ error }} </p>
-    <div class="list card" ng-repeat="event in agenda">
+    <p ng-if="agenda.error"> {{ agenda.error }} </p>
+    <div class="list card" ng-repeat="event in agenda.eventos">
         <div class="item item-divider">
             <a href="#" ng-click="goOutside(event.page)">{{ event.title }}</a>
         </div>

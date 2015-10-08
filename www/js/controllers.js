@@ -13,8 +13,8 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
                     agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
                 }
             }
-            $scope.error = agenda.error;
-            $scope.agenda = agenda.eventos.reverse();
+            agenda.eventos = agenda.eventos.reverse();
+            $scope.agenda = agenda;
             $ionicLoading.hide();
         }, function (error) {
             console.log(error);
