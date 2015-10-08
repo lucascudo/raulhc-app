@@ -43,6 +43,7 @@ angular.module('starter', [
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
+    cache: false,
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
@@ -62,6 +63,7 @@ angular.module('starter', [
   
   .state('tab.chat', {
     url: '/chat',
+    cache: false,
     views: {
       'tab-chat': {
         controller: 'ChatCtrl'
@@ -71,6 +73,7 @@ angular.module('starter', [
   
   .state('tab.contato', {
     url: '/contato',
+    cache: false,
     views: {
       'tab-contato': {
         controller: 'ContatoCtrl'
