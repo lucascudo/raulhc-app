@@ -51,6 +51,7 @@ angular.module('starter', [
 
   .state('tab.agenda', {
     url: '/agenda',
+    cache: false,
     views: {
       'tab-agenda': {
         templateUrl: 'templates/tab-agenda.html',
@@ -79,6 +80,7 @@ angular.module('starter', [
   
   .state('tab.doar', {
     url: '/doar',
+    cache: false,
     views: {
       'tab-doar': {
         templateUrl: 'templates/tab-doar.html',
@@ -89,6 +91,7 @@ angular.module('starter', [
   
   .state('tab.temGente', {
     url: '/temGente',
+    cache: false,
     views: {
       'tab-tem-gente': {
         templateUrl: 'templates/tab-tem-gente.html',
