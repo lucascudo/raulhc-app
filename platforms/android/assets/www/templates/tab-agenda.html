@@ -1,9 +1,10 @@
 <ion-view view-title="Agenda">
   <ion-content class="padding">
     <ionic-datepicker input-obj="datepickerObject">
-        <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd-MM-yyyy' }}</button>
+        <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd/MM/yyyy' }}</button>
     </ionic-datepicker>
-    <div class="list card" ng-repeat="event in agenda">
+    <p ng-if="agenda.error"> {{ agenda.error }} </p>
+    <div class="list card" ng-repeat="event in agenda.eventos">
         <div class="item item-divider">
             <a href="#" ng-click="goOutside(event.page)">{{ event.title }}</a>
         </div>
@@ -25,9 +26,9 @@
                     <font ng-if="!event.enderecoUrl"> {{ event.endereco }} </font>
                     <a href="#" ng-if="event.enderecoUrl" ng-click="goOutside(event.enderecoUrl)"> {{ event.endereco }} </a>
                 <br />
-                <b>Inicio:</b> {{ event.dataIni | date:'dd-MM-yyyy' }} {{ event.horaIni }}
+                <b>Inicio:</b> {{ event.dataIni | date:'dd/MM/yyyy' }} {{ event.horaIni }}
                 <br />
-                <b>Fim:</b> {{ event.dataFim | date:'dd-MM-yyyy' }} {{ event.horaFim }}
+                <b>Fim:</b> {{ event.dataFim | date:'dd/MM/yyyy' }} {{ event.horaFim }}
             </p>
         </div>
     </div>

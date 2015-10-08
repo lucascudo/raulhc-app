@@ -40,6 +40,11 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     loadAgenda(new Date());
 })
 
+.controller('ChatCtrl', function ($rootScope, $state) {
+    $rootScope.goOutside("https://webchat.freenode.net/?channels=raulhc");
+    $state.go("tab.doar");
+})
+
 .controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
     RaulFactory.local.getHelpAppeal(function (phrase) {

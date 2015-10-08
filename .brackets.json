@@ -1,0 +1,9 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/var/www/html/raulhc/platforms/android/assets/www/cordova-js-src/android/promptbasednativeapi.js",
+        "/var/www/html/raulhc/platforms/android/assets/www/cordova-js-src/android/nativeapiprovider.js",
+        "/var/www/html/raulhc/platforms/android/assets/www/cordova-js-src/exec.js",
+        "/var/www/html/raulhc/platforms/android/assets/www/cordova-js-src/platform.js",
+        "/var/www/html/raulhc/www/js/app.js"
+    ]
+}

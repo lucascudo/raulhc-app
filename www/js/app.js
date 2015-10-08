@@ -58,6 +58,15 @@ angular.module('starter', [
     }
   })
   
+  .state('tab.chat', {
+    url: '/chat',
+    views: {
+      'tab-chat': {
+        controller: 'ChatCtrl'
+      }
+    }
+  })
+  
   .state('tab.doar', {
     url: '/doar',
     views: {
