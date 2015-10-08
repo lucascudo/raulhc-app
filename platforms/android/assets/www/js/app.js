@@ -26,8 +26,9 @@ angular.module('starter', [
     }
   });
     
-  $rootScope.goOutside = function (url) {
-      window.open(url, '_blank');
+  $rootScope.goOutside = function (url, target) {
+      target = target || '_blank'; 
+      window.open(url, target);
   };
 })
 
@@ -63,6 +64,15 @@ angular.module('starter', [
     views: {
       'tab-chat': {
         controller: 'ChatCtrl'
+      }
+    }
+  })
+  
+  .state('tab.contato', {
+    url: '/contato',
+    views: {
+      'tab-contato': {
+        controller: 'ContatoCtrl'
       }
     }
   })

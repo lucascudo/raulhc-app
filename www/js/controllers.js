@@ -45,6 +45,11 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     $state.go("tab.doar");
 })
 
+.controller('ContatoCtrl', function ($rootScope, $state) {
+    $rootScope.goOutside("mailto:contato@raulhc.cc", "_system");
+    $state.go("tab.doar");
+})
+
 .controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
     RaulFactory.local.getHelpAppeal(function (phrase) {
