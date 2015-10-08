@@ -12,8 +12,10 @@ angular.module('starter.services', [ 'ngResource' ])
         }),
         ajax: {
             getTemGente: function (successCallback, errorCallback) { 
-                $http({ method: "GET", url: baseUrl + "/bin/tem-gente?type=plain" })
-                    .success(successCallback).error(errorCallback);
+                $http({
+                    method: "GET",
+                    url: baseUrl + "/bin/tem-gente?type=plain"
+                }).then(successCallback, errorCallback);
             }
         },
         local: {

@@ -50,8 +50,8 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
 
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
-    RaulFactory.ajax.getTemGente(function (temGente) {
-        $scope.temGente = temGente;
+    RaulFactory.ajax.getTemGente(function (res) {
+        $scope.temGente = res.data;
         $ionicLoading.hide();
     }, function (error) {
         console.log(error);
