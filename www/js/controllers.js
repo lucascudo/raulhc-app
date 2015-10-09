@@ -1,19 +1,11 @@
 angular.module('starter.controllers', [ 'ionic-datepicker' ])
 
-.controller('AgendaCtrl', function ($ionicLoading, $scope, RaulFactory) {
+.controller('AgendaCtrl', function ($ionicLoading, $scope, ComponentFactory, RaulFactory) {
     var loadAgenda = function (date) {
         $scope.datepickerObject.inputDate = date;
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
         $ionicLoading.show({ template: 'loading' });
-        RaulFactory.restful.getAgenda({ "date": date }, function (agenda) {
-            var needle = "Doc.Sede#ComoChegar";
-            for (var i = 0; i < agenda.eventos.length; ++i) {
-                if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
-                    agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace(needle, "");
-                    agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
-                }
-            }
-            agenda.eventos = agenda.eventos.reverse();
+        RaulFactory.getAgenda({ "date": date }, function (agenda) {
             $scope.agenda = agenda;
             $ionicLoading.hide();
         }, function (error) {
@@ -23,19 +15,11 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
         });
     };
     
-    $scope.datepickerObject = {
-      titleLabel: 'Selecione uma data',
-      todayLabel: 'Hoje',
-      closeLabel: 'Fechar',
-      setLabel: 'Aplicar',
-      weekDaysList: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
-      monthList: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      callback: function (date) {
+    $scope.datepickerObject = ComponentFactory.getDatepicker(function (date) {
         if (typeof date !== "undefined") {
             loadAgenda(date);
         }
-      }
-    };
+    });
     
     loadAgenda(new Date());
 })
@@ -52,15 +36,13 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
 
 .controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
-    RaulFactory.local.getHelpAppeal(function (phrase) {
-        $scope.helpAppeal = phrase;
-        $ionicLoading.hide();
-    });
+    $scope.helpAppeal = RaulFactory.getHelpAppeal();
+    $ionicLoading.hide();
 })
 
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
-    RaulFactory.ajax.getTemGente(function (res) {
+    RaulFactory.getTemGente(function (res) {
         $scope.temGente = res.data;
         $ionicLoading.hide();
     }, function (error) {
