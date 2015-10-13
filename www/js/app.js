@@ -8,10 +8,11 @@
 angular.module('starter', [
   'ionic',
   'starter.controllers',
-  'starter.services'
+  'starter.services',
+  'starter.directives'
 ])
 
-.run(function ($ionicPlatform, $rootScope) {
+.run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -25,11 +26,6 @@ angular.module('starter', [
       StatusBar.styleLightContent();
     }
   });
-    
-  $rootScope.goOutside = function (url, target) {
-      target = target || '_blank'; 
-      window.open(url, target);
-  };
 })
 
 .config(function ($stateProvider, $urlRouterProvider) {
@@ -63,9 +59,9 @@ angular.module('starter', [
   
   .state('tab.chat', {
     url: '/chat',
-    cache: false,
     views: {
       'tab-chat': {
+        templateUrl: 'templates/tab-chat.html',
         controller: 'ChatCtrl'
       }
     }
@@ -76,7 +72,17 @@ angular.module('starter', [
     cache: false,
     views: {
       'tab-contato': {
+        templateUrl: 'templates/tab-contato.html',
         controller: 'ContatoCtrl'
+      }
+    }
+  })
+  
+  .state('tab.compartilhar', {
+    url: '/compartilhar',
+    views: {
+      'tab-compartilhar': {
+        templateUrl: 'templates/tab-compartilhar.html'
       }
     }
   })
