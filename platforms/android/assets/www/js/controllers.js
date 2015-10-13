@@ -24,14 +24,15 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     loadAgenda(new Date());
 })
 
-.controller('ChatCtrl', function ($rootScope, $state) {
-    $rootScope.goOutside("https://webchat.freenode.net/?channels=raulhc");
-    $state.go("tab.doar");
+.controller('ChatCtrl', function ($ionicLoading, $scope) {
+    $ionicLoading.show();
+    $scope.closeGauge = function () {
+        $ionicLoading.hide();
+    }
 })
 
 .controller('ContatoCtrl', function ($rootScope, $state) {
-    $rootScope.goOutside("mailto:contato@raulhc.cc", "_system");
-    $state.go("tab.doar");
+    window.open("mailto:contato@raulhc.cc", "_system");
 })
 
 .controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
