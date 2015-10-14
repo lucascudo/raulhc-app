@@ -80,6 +80,7 @@ angular.module('starter', [
   
   .state('tab.compartilhar', {
     url: '/compartilhar',
+    cache: false,
     views: {
       'tab-compartilhar': {
         templateUrl: 'templates/tab-compartilhar.html'
