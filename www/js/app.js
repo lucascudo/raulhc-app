@@ -59,6 +59,7 @@ angular.module('starter', [
   
   .state('tab.chat', {
     url: '/chat',
+    cache: false,
     views: {
       'tab-chat': {
         templateUrl: 'templates/tab-chat.html',

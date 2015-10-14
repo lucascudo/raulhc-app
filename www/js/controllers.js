@@ -25,10 +25,7 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
 })
 
 .controller('ChatCtrl', function ($ionicLoading, $scope) {
-    $ionicLoading.show();
-    $scope.closeGauge = function () {
-        $ionicLoading.hide();
-    }
+    window.open("https://webchat.freenode.net/?channels=raulhc", "_blank");
 })
 
 .controller('ContatoCtrl', function ($rootScope, $state) {
