@@ -19,19 +19,20 @@ angular.module("starter.services", [ "ngResource" ])
 .factory("RaulFactory", function ($http, $resource) {
     var baseUrl = "http://raulhc.cc/";
     return {
-        getAgenda: function (data, successCallback, errorCallback) { 
-            $resource(baseUrl, {}, {
-                getAgenda: {
+        getAgenda: function (data, successCallback, errorCallback) {
+            return $resource(baseUrl, {}, {
+                getAgendaFromRaulWS: {
                     url: baseUrl + "/Agenda/JSON?data=:date",
                     params: { date: "@date" },
                     method: "GET"
                 }
-            }).getAgenda(data, function (agenda) {
+            }).getAgendaFromRaulWS(data, function (agenda) {
                 var needle = "Doc.Sede#ComoChegar";
                 for (var i = 0; i < agenda.eventos.length; ++i) {
                     if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
-                        agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace(needle, "");
                         agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
+                        agenda.eventos[i].endereco = agenda.eventos[i].endereco
+                            .replace(needle, "").replace("n&ordm;", "");
                     }
                 }
                 agenda.eventos = agenda.eventos.reverse();
@@ -39,12 +40,12 @@ angular.module("starter.services", [ "ngResource" ])
             }, errorCallback);
         },
         getTemGente: function (successCallback, errorCallback) { 
-            $http({
+            return $http({
                 method: "GET",
                 url: baseUrl + "/bin/tem-gente?type=plain"
             }).then(successCallback, errorCallback);
         },
-        getHelpAppeal: function () {
+        getHelpAppeal: function randomPhrase() {
             var phrases = [
                 "Sem a sua ajuda muitos Padawans não chegarão a se tornar Jedis.",
                 "Com a sua ajuda teremos um lugar para virar a noite hackeando e um sofá para dormir até o meio dia.",

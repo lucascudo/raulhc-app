@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [ 'ionic-datepicker' ])
 
-.controller('AgendaCtrl', function ($ionicLoading, $scope, ComponentFactory, RaulFactory) {
+.controller('AgendaCtrl', function ($ionicLoading, $rootScope, $scope, ComponentFactory, RaulFactory) {
     var loadAgenda = function (date) {
         $scope.datepickerObject.inputDate = date;
         date = date.getUTCFullYear() + '-' + ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' + ('00' + date.getUTCDate()).slice(-2);
@@ -15,7 +15,7 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
         });
     };
     
-    $scope.datepickerObject = ComponentFactory.getDatepicker(function (date) {
+    $scope.datepickerObject = ComponentFactory.getDatepicker(function callback(date) {
         if (typeof date !== "undefined") {
             loadAgenda(date);
         }
@@ -24,15 +24,15 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     loadAgenda(new Date());
 })
 
-.controller('ChatCtrl', function ($ionicLoading, $scope) {
+.controller('ChatCtrl', function () {
     window.open("https://webchat.freenode.net/?channels=raulhc", "_blank");
 })
 
-.controller('ContatoCtrl', function ($rootScope, $state) {
-    window.open("mailto:contato@raulhc.cc", "_system");
+.controller('ContatoCtrl', function ($rootScope) {
+    $rootScope.goOutside("mailto:contato@raulhc.cc");
 })
 
-.controller('DoarCtrl', function ($ionicLoading, $scope, RaulFactory) {
+.controller('DoarCtrl', function ($ionicLoading, $rootScope, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
     $scope.helpAppeal = RaulFactory.getHelpAppeal();
     $ionicLoading.hide();

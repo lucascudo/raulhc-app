@@ -12,7 +12,12 @@ angular.module('starter', [
   'starter.directives'
 ])
 
-.run(function ($ionicPlatform) {
+.run(function ($ionicPlatform, $rootScope) {
+  $rootScope.goOutside = function (url, target) {
+      target = target || "_system";
+      window.open(url, target);
+  };
+    
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
