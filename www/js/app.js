@@ -8,8 +8,7 @@
 angular.module('starter', [
   'ionic',
   'starter.controllers',
-  'starter.services',
-  'starter.directives'
+  'starter.services'
 ])
 
 .run(function ($ionicPlatform, $rootScope) {

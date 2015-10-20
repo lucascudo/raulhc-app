@@ -16,34 +16,18 @@ angular.module("starter.services", [ "ngResource" ])
     };
 })
 
-.factory("RaulFactory", function ($http, $resource) {
+.factory("RaulWSFactory", function ($http, $resource) {
     var baseUrl = "http://raulhc.cc/";
-    return {
-        getAgenda: function (data, successCallback, errorCallback) {
-            return $resource(baseUrl, {}, {
-                getAgendaFromRaulWS: {
-                    url: baseUrl + "/Agenda/JSON?data=:date",
-                    params: { date: "@date" },
-                    method: "GET"
-                }
-            }).getAgendaFromRaulWS(data, function (agenda) {
-                var needle = "Doc.Sede#ComoChegar";
-                for (var i = 0; i < agenda.eventos.length; ++i) {
-                    if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
-                        agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
-                        agenda.eventos[i].endereco = agenda.eventos[i].endereco
-                            .replace(needle, "").replace("n&ordm;", "");
-                    }
-                }
-                agenda.eventos = agenda.eventos.reverse();
-                successCallback(agenda);
-            }, errorCallback);
+    return $resource(baseUrl, {}, {
+        getAgenda: {
+            url: baseUrl + "/Agenda/JSON?data=:date",
+            params: { date: "@date" },
+            method: "GET"
         },
-        getTemGente: function (successCallback, errorCallback) { 
-            return $http({
-                method: "GET",
-                url: baseUrl + "/bin/tem-gente?type=plain"
-            }).then(successCallback, errorCallback);
+        getTemGente: {
+            url: baseUrl + "/bin/tem-gente?type=json",
+            method: "GET"
         }
-    }
+        
+    });
 });

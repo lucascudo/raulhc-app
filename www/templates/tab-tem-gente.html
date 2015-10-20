@@ -1,5 +1,22 @@
 <ion-view view-title="Tem Gente?">
-  <ion-content class="padding">
-    <p class="no-margin">{{ temGente }}</p>
+  <ion-content>
+      <div ng-if="temGente.numPess == 0">
+        <p class="padding">
+            No momento a sede está vazia. :-(
+            <br/>
+            Ou estamos em modo ninja. ;-)
+        </p>
+        <img src="img/ninja.png" style="float: right; right: -5px"/>
+      </div>
+      
+      <p ng-if="temGente.numPess > 0">
+          Temos {{ temGente.numPess }}
+            <font ng-if="temGente.numPess == 1"> Raulzito </font>
+            <font ng-if="temGente.numPess > 1">Raulzitos </font>
+          na sede.
+          <font ng-repeat="index in temGente.numPessArray"> \o/ </font>
+          <br>
+          Fecharemos em {{ temGente.fechaEm }}.
+      </p>
   </ion-content>
 </ion-view>
