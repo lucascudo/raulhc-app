@@ -94,17 +94,6 @@ angular.module('starter', [
     }
   })
   
-  .state('tab.doar', {
-    url: '/doar',
-    cache: false,
-    views: {
-      'tab-doar': {
-        templateUrl: 'templates/tab-doar.html',
-        controller: 'DoarCtrl'
-      }
-    }
-  })
-  
   .state('tab.temGente', {
     url: '/temGente',
     cache: false,
@@ -117,6 +106,6 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/doar');
+  $urlRouterProvider.otherwise('/tab/temGente');
 
 });

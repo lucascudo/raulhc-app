@@ -1,9 +1,0 @@
-{
-    "jscodehints.detectedExclusions": [
-        "/var/www/html/raulhc/platforms/android/assets/www/js/controllers.js",
-        "/var/www/html/raulhc/platforms/android/assets/www/js/services.js",
-        "/var/www/html/raulhc/www/js/controllers.js",
-        "/var/www/html/raulhc/www/js/services.js",
-        "/var/www/html/raulhc/platforms/android/assets/www/cordova-js-src/android/nativeapiprovider.js"
-    ]
-}

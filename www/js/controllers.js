@@ -32,12 +32,6 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
     $rootScope.goOutside("mailto:contato@raulhc.cc");
 })
 
-.controller('DoarCtrl', function ($ionicLoading, $rootScope, $scope, RaulFactory) {
-    $ionicLoading.show({ template: 'loading' });
-    $scope.helpAppeal = RaulFactory.getHelpAppeal();
-    $ionicLoading.hide();
-})
-
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulFactory) {
     $ionicLoading.show({ template: 'loading' });
     RaulFactory.getTemGente(function (res) {
