@@ -2559,15 +2559,22 @@ body, .ionic-body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #fff;
   word-wrap: break-word;
-  font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-family: 'Abel', sans-serif;
+  /* font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; */
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
   -ms-content-zooming: none; }
+
+#colorforhere{
+  color: #fff;
+  font-weight: bold;
+}
+
 
 body.grade-b, body.grade-c {
   text-rendering: auto; }
@@ -2711,7 +2718,10 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 44px; }
+  top: 44px; 
+  background-color: #0DBED0;
+
+  }
 
 .no-header {
   top: 0; }
@@ -7695,3 +7705,13 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+
+.pane {
+  color: #fff;
+  font-weight: bold;
+  background: #0DBED0;
+}
+.scroll-content {
+  background: transparent;
+}

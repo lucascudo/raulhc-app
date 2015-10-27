@@ -1,12 +1,11 @@
 <ion-view view-title="Tem Gente?">
-  <ion-content>
+  <ion-content ng-class="{ 'ninja-bg' : temGente.numPess == 0 }">
       <div ng-if="temGente.numPess == 0">
         <p class="padding">
-            No momento a sede está vazia. :-(
+            No momento a sede está vazia.
             <br/>
             Ou estamos em modo ninja. ;-)
-        </p>
-        <img src="img/ninja.png" style="float: right; right: -5px"/>
+        </p>      
       </div>
       
       <p ng-if="temGente.numPess > 0">

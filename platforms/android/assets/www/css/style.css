@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+
+.ninja-bg{
+  background:  url(../img/ninja.svg) 50% 30% fixed no-repeat;
+}
