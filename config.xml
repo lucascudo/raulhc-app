@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="cc.raulhc" version="0.6.10" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="cc.raulhc" version="0.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>RaulHC</name>
   <description>
         Aplicativo do Raul Hacker Club
-    </description>
+  </description>
   <author email="lucas.sisau@gmail.com" href="http://lucas.redeaberta.com.br/">
         Cascudo
   </author>
