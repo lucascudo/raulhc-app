@@ -59,4 +59,10 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
         $scope.temGente = "";
         $ionicLoading.hide();
     });
+})
+
+.controller('RaulCtrl', function ($scope, MediaSrv) {
+	MediaSrv.loadMedia('audio/2015-06-10-Nelson-Pretto-Conexoes-Raul-Hacker-Club.mp3').then(function(media){
+		$scope.media = media;
+	});
 });

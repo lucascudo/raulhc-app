@@ -8,6 +8,7 @@
 angular.module('starter', [
   'ionic',
   'starter.controllers',
+  'starter.directives',
   'starter.services'
 ])
 
@@ -102,9 +103,19 @@ angular.module('starter', [
         controller: 'TemGenteCtrl'
       }
     }
+  })
+  
+  .state('tab.raul', {
+    url: '/raul',
+    views: {
+      'tab-raul': {
+        templateUrl: 'templates/tab-raul.html',
+        controller: 'RaulCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/temGente');
+  $urlRouterProvider.otherwise('/tab/raul');
 
 });
