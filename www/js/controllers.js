@@ -10,6 +10,7 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
             for (var i = 0; i < agenda.eventos.length; ++i) {
                 if (agenda.eventos[i].endereco.indexOf(needle) > -1) {
                     agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace(needle, "");
+                    agenda.eventos[i].endereco = agenda.eventos[i].endereco.replace("n&ordm;", "Nº");
                     agenda.eventos[i].enderecoUrl = "http://raulhc.cc/Doc/Sede#ComoChegar";
                 }
             }

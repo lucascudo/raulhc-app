@@ -1,7 +1,7 @@
 <ion-view view-title="Agenda">
   <ion-content class="padding">
     <ionic-datepicker input-obj="datepickerObject">
-        <button class="button button-block button-positive">A partir de {{ datepickerObject.inputDate | date:'dd/MM/yyyy' }}</button>
+        <button class="button button-royal icon-left ion-ios-calendar">A partir de {{ datepickerObject.inputDate | date:'dd/MM/yyyy' }}</button>
     </ionic-datepicker>
     <p ng-if="agenda.error"> {{ agenda.error }} </p>
     <div class="list card" ng-repeat="event in agenda.eventos">

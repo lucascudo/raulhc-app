@@ -1,5 +1,33 @@
 /* Empty. Add your own CSS if you like */
+body {
+	color: #FFF;
+	font-size: 16px;
+	font-family: 'Abel', sans-serif;
+}
 
-.ninja-bg{
-  background:  url(../img/ninja.svg) 50% 30% fixed no-repeat;
+.pane {
+	background-color: #36465D;
+}
+
+.calendar_grid {
+	color: #000;
+}
+
+.my-player {
+	float: right;
+	background: rgba(0,0,0,0.4);
+	padding: 10px 10px 7px 10px;
+	margin-left: 10px;
+	text-align: center;
+	float:left;
+	margin:0 12px 5px 0;
+	
+}
+
+.my-player-button {
+	font-size: 32px;
+}
+
+.ninja-bg {
+  background: url(../img/ninja.svg) 50% 30% fixed no-repeat;
 }
