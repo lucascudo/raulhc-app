@@ -7,6 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic',
+  'ionic-material',
   'starter.controllers',
   'starter.directives',
   'starter.services'
