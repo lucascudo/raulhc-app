@@ -43,7 +43,7 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
 .controller('TemGenteCtrl', function ($ionicLoading, $scope, RaulWSFactory) {
     $ionicLoading.show({ template: 'loading' });
     RaulWSFactory.getTemGente(function (res) {
-        if (res.fechaEm) {
+        if (res && res.fechaEm && res.numPess) {
             function two(n) { return n<10 ? '0'+n : n }
             var now = new Date();
             var mOffset = now.getTimezoneOffset() % 60;
@@ -52,12 +52,14 @@ angular.module('starter.controllers', [ 'ionic-datepicker' ])
             fecha.setMinutes( fecha.getMinutes() - fecha.getTimezoneOffset() );
             var left = new Date(fecha -now);
             res.fechaEm = two(left.getUTCHours() - 3)+':'+two(left.getUTCMinutes())+':'+two(left.getUTCSeconds());
+            $scope.temGente = { fechaEm: res.fechaEm, numPess: res.numPess, numPessArray: new Array(res.fechaEm) };
+        } else {
+            $scope.temGente = { numPess: 0 };
         }
-        $scope.temGente = { fechaEm: res.fechaEm, numPess: res.numPess, numPessArray: new Array(res.fechaEm) };
         $ionicLoading.hide();
     }, function (error) {
         console.log(error);
-        $scope.temGente = "";
+        $scope.temGente = { numPess: 0 };
         $ionicLoading.hide();
     });
 })

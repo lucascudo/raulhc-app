@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="cc.raulhc" version="0.7.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>RaulHC</name>
+<widget id="cc.raulhc" version="0.7.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Raul Hacker Club</name>
   <description>
-        Aplicativo do Raul Hacker Club
+        Aplicativo do RaulHC.
   </description>
-  <author email="lucas.sisau@gmail.com" href="http://lucas.redeaberta.com.br/">
+  <author email="lucas.sisau@gmail.com" href="http://lucascudo.com.br/">
         Cascudo
   </author>
   <author email="nekoone@riseup.net" href="http://raulhc.cc/">
